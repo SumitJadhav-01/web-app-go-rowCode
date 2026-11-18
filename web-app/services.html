@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Devotional Activities & Services - Shree Ganesh Temple">
+<title>Devotional Activities & Services | Shree Ganesh Temple</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --maroon: #7b1e12;
+    --deep: #42170f;
+    --gold: #f5b544;
+    --cream: #fffaf2;
+    --soft: #f8ead5;
+    --text: #3c2818;
+    --muted: #75685e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+a { color: inherit; }
+.site-header {
+    background: var(--maroon); color: white; padding: 16px 7%;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 18px; flex-wrap: wrap;
+}
+.logo { font: 700 24px 'Playfair Display', serif; text-decoration: none; }
+.logo span { color: var(--gold); }
+nav ul { display: flex; list-style: none; gap: 22px; flex-wrap: wrap; }
+nav a { color: white; text-decoration: none; font-size: 14px; transition: .2s; }
+nav a:hover, nav a.active { color: var(--gold); }
+.hero {
+    min-height: 390px; padding: 65px 7%; display: grid; place-items: center;
+    text-align: center; color: white;
+    background: linear-gradient(90deg, rgba(48,15,8,.78), rgba(48,15,8,.45)),
+    url('https://images.unsplash.com/photo-1604608672516-0d5b6e3c5e6a?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+.hero-content { max-width: 780px; }
+.hero h1 { font: 700 clamp(36px, 5vw, 58px)/1.15 'Playfair Display', serif; margin-bottom: 16px; }
+.hero p { max-width: 690px; margin: 0 auto 24px; font-size: 15px; color: #fff5e9; }
+.btn {
+    display: inline-block; background: var(--gold); color: #3c2110;
+    padding: 11px 25px; border-radius: 28px; text-decoration: none;
+    font-weight: 600; font-size: 14px; transition: .2s; border: 0; cursor: pointer;
+}
+.btn:hover { background: white; }
+.btn-dark { background: var(--maroon); color: white; }
+.btn-dark:hover { background: var(--gold); color: var(--deep); }
+.section { padding: 68px 7%; }
+.section-soft { background: var(--soft); }
+.section-title { text-align: center; margin-bottom: 38px; }
+.section-title h2 { font: 700 clamp(28px, 3.5vw, 38px) 'Playfair Display', serif; color: var(--maroon); margin-bottom: 9px; }
+.section-title p { color: var(--muted); font-size: 14px; max-width: 700px; margin: auto; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 22px rgba(70,40,15,.08); transition: .25s; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(70,40,15,.14); }
+.card img { width: 100%; height: 205px; object-fit: cover; display: block; }
+.card-body { padding: 22px; }
+.card h3 { font: 600 22px 'Playfair Display', serif; color: var(--maroon); margin-bottom: 9px; }
+.card p { color: var(--muted); font-size: 13px; margin-bottom: 17px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: center; }
+.split img { width: 100%; height: 390px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 25px rgba(70,40,15,.12); }
+.split h2 { color: var(--maroon); font: 700 34px 'Playfair Display', serif; margin-bottom: 15px; }
+.split p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.value-card { background: white; padding: 27px 22px; border-radius: 14px; text-align: center; box-shadow: 0 5px 18px rgba(70,40,15,.07); }
+.value-card .icon { font-size: 36px; margin-bottom: 9px; }
+.value-card h3 { font: 600 21px 'Playfair Display', serif; color: var(--maroon); margin-bottom: 8px; }
+.value-card p { color: var(--muted); font-size: 13px; }
+.quote, .mission { text-align: center; padding: 55px 7%; background: var(--soft); }
+.quote h2 { color: var(--maroon); font: 700 31px 'Playfair Display', serif; margin-bottom: 10px; }
+.quote p { color: var(--muted); font-size: 14px; }
+.mission { color: white; background: linear-gradient(rgba(55,17,9,.86),rgba(55,17,9,.86)), url('https://images.unsplash.com/photo-1604608672516-0d5b6e3c5e6a?auto=format&fit=crop&w=1600&q=85') center/cover; }
+.mission h2 { font: 700 34px 'Playfair Display', serif; margin-bottom: 12px; }
+.mission p { max-width: 760px; margin: auto; font-size: 14px; color: #f7e9dc; }
+.contact-grid { display: grid; grid-template-columns: .9fr 1.2fr; gap: 26px; }
+.contact-info { background: var(--maroon); color: white; border-radius: 14px; padding: 30px; }
+.contact-info h3, .contact-form h3 { font: 600 25px 'Playfair Display', serif; margin-bottom: 22px; }
+.info-item { margin-bottom: 20px; }
+.info-item h4 { color: var(--gold); font-size: 14px; margin-bottom: 5px; }
+.info-item p { color: #f6e9df; font-size: 13px; overflow-wrap: anywhere; }
+.contact-form { background: white; padding: 30px; border-radius: 14px; box-shadow: 0 5px 22px rgba(70,40,15,.08); }
+.contact-form h3 { color: var(--maroon); }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid #e4d5c5; border-radius: 7px;
+    background: #fffdf9; font: 13px 'Poppins', sans-serif;
+}
+.form-group textarea { min-height: 115px; resize: vertical; }
+.form-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
+.site-footer { background: var(--deep); color: white; text-align: center; padding: 30px 7%; }
+.site-footer h3 { font: 700 24px 'Playfair Display', serif; margin-bottom: 7px; }
+.site-footer p { color: #ead6c7; font-size: 13px; }
+.copyright { border-top: 1px solid #795044; margin-top: 18px; padding-top: 15px; }
+@media (max-width: 850px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .split, .contact-grid { grid-template-columns: 1fr; }
+    .split img { height: 330px; }
+}
+@media (max-width: 580px) {
+    .site-header { justify-content: center; text-align: center; }
+    nav ul { justify-content: center; gap: 12px 16px; }
+    .grid { grid-template-columns: 1fr; }
+    .section { padding: 48px 5%; }
+    .hero { min-height: 340px; }
+    .contact-info, .contact-form { padding: 23px; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+        <a class="logo" href="home">🕉 Shree Ganesh <span>Temple</span></a>
+        <nav aria-label="Main navigation"><ul><li><a class="" href="home">Home</a></li><li><a class="" href="about">About</a></li><li><a class="active" href="services">Services</a></li><li><a class="" href="contact">Contact</a></li></ul></nav>
+    </header>
+
+<main>
+<section class="hero"><div class="hero-content"><h1>Devotional Activities & Services</h1><p>Experience devotion, peace and spirituality through sacred rituals, divine celebrations and selfless service.</p><a class="btn" href="#activities">Explore Activities</a></div></section>
+<section class="section" id="activities"><div class="section-title"><h2>Our Sacred Activities</h2><p>Explore devotional activities and temple services. Please contact the temple to confirm availability, schedules and arrangements.</p></div>
+  <div class="grid">
+    <article class="card"><img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=900&q=80" alt="Puja and rituals"><div class="card-body"><h3>Puja & Rituals</h3><p>Traditional Ganesh Puja, special rituals and sacred ceremonies for devotees.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1604608672516-0d5b6e3c5e6a?auto=format&fit=crop&w=900&q=80" alt="Aarti and bhajans"><div class="card-body"><h3>Aarti & Bhajans</h3><p>Participate in devotional prayers, aarti and bhajan gatherings.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=900&q=80" alt="Festival celebrations"><div class="card-body"><h3>Festivals & Celebrations</h3><p>Celebrate Ganesh Chaturthi, Sankashti Chaturthi and other auspicious occasions.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80" alt="Meditation"><div class="card-body"><h3>Meditation & Naam Japa</h3><p>Make time for quiet reflection, prayer and remembrance of Lord Ganesha.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80" alt="Community service"><div class="card-body"><h3>Seva & Donations</h3><p>Participate in community service, volunteering and charitable activities.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=80" alt="Prasad and offerings"><div class="card-body"><h3>Prasad & Offerings</h3><p>Learn about traditional offerings such as flowers, durva and modak.</p><a class="btn btn-dark" href="contact">Enquire</a></div></article>
+  </div>
+</section>
+<section class="quote"><h2>गणपती बाप्पा मोरया!</h2><p>May every good beginning be blessed with wisdom, courage and grace.</p></section>
+</main>
+
+<footer class="site-footer">
+    <h3>Shree Ganesh Temple</h3>
+    <p>Faith • Devotion • Peace • Service</p>
+    <p class="copyright">© 2026 Shree Ganesh Temple. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
