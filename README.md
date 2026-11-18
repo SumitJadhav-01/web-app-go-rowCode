@@ -12,7 +12,7 @@ It features a traditional visual theme with maroon, gold, and cream colors, devo
 
 ## 📸 Application Preview
 
-![Shree Ganesh Temple Website](screenshots/home.png)
+![Shree Ganesh Temple Website](images/golang-website.png)
 
 ## ✨ Website Features
 
